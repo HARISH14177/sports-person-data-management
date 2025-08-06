@@ -1,7 +1,7 @@
 import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
-// Create new event
+
 export const createEvent = async (req, res) => {
   const { name, location, date, time, organiserGymId } = req.body;
 
@@ -25,7 +25,7 @@ export const createEvent = async (req, res) => {
   }
 };
 
-// Get all events
+
 export const getAllEvents = async (req, res) => {
   try {
     const events = await prisma.event.findMany({
@@ -39,7 +39,7 @@ export const getAllEvents = async (req, res) => {
   }
 };
 
-// Get event by ID
+
 export const getEventById = async (req, res) => {
   const { id } = req.params;
 
@@ -64,7 +64,7 @@ export const getEventById = async (req, res) => {
     res.status(500).json({ error: 'Failed to get event' });
   }
 };
-// Update event by ID
+
 export const updateEvent = async (req, res) => {
     const { id } = req.params;
     const { name, location, date, time, organiserGymId } = req.body;
@@ -89,7 +89,6 @@ export const updateEvent = async (req, res) => {
       res.status(500).json({ error: 'Failed to update event' });
     }
   };
-// Delete event by ID
 export const deleteEvent = async (req, res) => {
     const { id } = req.params;
   

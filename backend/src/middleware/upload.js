@@ -15,5 +15,5 @@ const storage = multer.diskStorage({
 // Accept two fields: photo and aadhar
 export const upload = multer({ storage }).fields([
   { name: 'photo', maxCount: 1 },
-  { name: 'aadhar', maxCount: 1 }
+  { name: 'aadhar', maxCount:1}
 ]);

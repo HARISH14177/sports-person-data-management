@@ -5,6 +5,7 @@ import {
   getRefereeById,
   updateReferee,
   deleteReferee,
+  getRefereesByEvent 
 } from '../controllers/refreecontroller.js';
 
 const router = express.Router();
@@ -14,5 +15,8 @@ router.get('/get', getAllReferees);
 router.get('/get/:id', getRefereeById);
 router.put('/update/:id', updateReferee);
 router.delete('/delete/:id', deleteReferee);
+
+
+router.get('/by-event/:eventId', getRefereesByEvent);
 
 export default router;

@@ -6,6 +6,13 @@ export const createScore = async (req, res) => {
   const { athleteId, disciplineId, eventId, trial1, trial2, trial3 } = req.body;
 
   try {
+    
+    if (!(trial1 < trial2 && trial2 < trial3)) {
+      return res.status(400).json({
+        error: 'Trial values must be increasing: trial1 < trial2 < trial3',
+      });
+    }
+
     const maxLift = Math.max(trial1, trial2, trial3);
     const score = await prisma.score.create({
       data: {
@@ -67,6 +74,13 @@ export const updateScore = async (req, res) => {
   const { trial1, trial2, trial3 } = req.body;
 
   try {
+    // ✅ Check trial order
+    if (!(trial1 < trial2 && trial2 < trial3)) {
+      return res.status(400).json({
+        error: 'Trial values must be increasing: trial1 < trial2 < trial3',
+      });
+    }
+
     const maxLift = Math.max(trial1, trial2, trial3);
     const score = await prisma.score.update({
       where: { id: parseInt(id) },
