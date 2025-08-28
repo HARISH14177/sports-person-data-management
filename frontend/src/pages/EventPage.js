@@ -120,7 +120,7 @@ const handleSubmit = async () => {
   }
 };
 
-=======
+
   const handleSubmit = async () => {
     const { name, location, date, time, organiserGymId, refereeName } = eventData;
     if (!name || !location || !date || !time || !organiserGymId || !refereeName) {
