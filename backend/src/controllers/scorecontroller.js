@@ -1,7 +1,6 @@
 import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
-// 🔹 Create Score
 export const createScore = async (req, res) => {
   const { athleteId, disciplineId, eventId, trial1, trial2, trial3 } = req.body;
 
