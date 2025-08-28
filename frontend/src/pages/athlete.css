@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Container */
 .athlete-container {
   max-width: 1100px;
@@ -189,3 +190,79 @@
     font-size: 0.95rem;
   }
 }
+=======
+.athlete-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.athlete-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.athlete-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.athlete-form label {
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  color: #444;
+}
+
+.athlete-form input,
+.athlete-form select {
+  padding: 8px;
+  font-size: 14px;
+  margin-top: 4px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.athlete-form input[type="file"] {
+  padding: 4px;
+}
+
+.athlete-form button {
+  width: 50%;
+  padding: 4px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+.athlete-form button:hover {
+  background-color: #0056b3;
+}
+
+.athlete-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.athlete-table th,
+.athlete-table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+  font-size: 13px;
+}
+
+
+
+.athlete-table img {
+  width: 50px;
+  height: auto;
+  border-radius: 4px;
+}
+>>>>>>> cada83ca762c26d5306adb73e37efcfa78fc4d9b

@@ -61,6 +61,7 @@ const EventManagement = () => {
     setEventData((prev) => ({ ...prev, [name]: value }));
   };
 
+<<<<<<< HEAD
 const handleSubmit = async () => {
   const { name, location, date, time, organiserGymId, refereeName } = eventData;
   if (!name || !location || !date || !time || !organiserGymId || !refereeName) {
@@ -119,6 +120,64 @@ const handleSubmit = async () => {
   }
 };
 
+=======
+  const handleSubmit = async () => {
+    const { name, location, date, time, organiserGymId, refereeName } = eventData;
+    if (!name || !location || !date || !time || !organiserGymId || !refereeName) {
+      return alert('Please fill in all fields including referee');
+    }
+
+    try {
+      if (isEditing) {
+        
+        await axios.put(`http://localhost:5000/api/event/update/${editEventId}`, {
+          name,
+          location,
+          date: new Date(date),
+          time,
+          organiserGymId: parseInt(organiserGymId)
+        });
+
+        
+        await axios.post('http://localhost:5000/api/refree/create', {
+          name: refereeName,
+          gymId: parseInt(organiserGymId),
+          eventId: editEventId
+        });
+
+        alert('Event and Referee updated successfully');
+      } else {
+        
+        const eventRes = await axios.post('http://localhost:5000/api/event/create', {
+          name,
+          location,
+          date: new Date(date),
+          time,
+          organiserGymId: parseInt(organiserGymId)
+        });
+
+        const newEventId = eventRes.data.id;
+
+        await axios.post('http://localhost:5000/api/refree/create', {
+          name: refereeName,
+          gymId: parseInt(organiserGymId),
+          eventId: newEventId
+        });
+
+        alert('Event and Referee created successfully');
+      }
+
+    
+      setEventData({ name: '', location: '', date: '', time: '', organiserGymId: '', refereeName: '' });
+      setIsEditing(false);
+      setEditEventId(null);
+      fetchEvents();
+    } catch (err) {
+      console.error('Submit Error:', err);
+      alert('Failed to submit event');
+    }
+  };
+>>>>>>> cada83ca762c26d5306adb73e37efcfa78fc4d9b
 
   const handleEdit = (event) => {
     setIsEditing(true);

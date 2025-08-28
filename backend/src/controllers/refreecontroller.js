@@ -58,6 +58,7 @@ export const updateReferee = async (req, res) => {
     res.status(500).json({ error: 'Failed to update referee' });
   }
 };
+<<<<<<< HEAD
 export const deleteRefereesByEvent = async (req, res) => {
   const { eventId } = req.params;
   try {
@@ -70,6 +71,22 @@ export const deleteRefereesByEvent = async (req, res) => {
     res.status(500).json({ error: 'Failed to delete referees' });
   }
 };
+=======
+
+
+export const deleteReferee = async (req, res) => {
+  const { id } = req.params;
+  try {
+    await prisma.referee.delete({ where: { id: parseInt(id) } });
+    res.status(200).json({ message: 'Referee deleted successfully' });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Failed to delete referee' });
+  }
+};
+
+
+>>>>>>> cada83ca762c26d5306adb73e37efcfa78fc4d9b
 export const getRefereesByEvent = async (req, res) => {
   const { eventId } = req.params;
   try {
@@ -82,4 +99,7 @@ export const getRefereesByEvent = async (req, res) => {
     res.status(500).json({ error: 'Failed to fetch referees for event' });
   }
 };
+<<<<<<< HEAD
 
+=======
+>>>>>>> cada83ca762c26d5306adb73e37efcfa78fc4d9b
