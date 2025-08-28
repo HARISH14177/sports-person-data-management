@@ -58,7 +58,6 @@ export const updateReferee = async (req, res) => {
     res.status(500).json({ error: 'Failed to update referee' });
   }
 };
-<<<<<<< HEAD
 export const deleteRefereesByEvent = async (req, res) => {
   const { eventId } = req.params;
   try {
@@ -71,7 +70,6 @@ export const deleteRefereesByEvent = async (req, res) => {
     res.status(500).json({ error: 'Failed to delete referees' });
   }
 };
-=======
 
 
 export const deleteReferee = async (req, res) => {
@@ -86,7 +84,6 @@ export const deleteReferee = async (req, res) => {
 };
 
 
->>>>>>> cada83ca762c26d5306adb73e37efcfa78fc4d9b
 export const getRefereesByEvent = async (req, res) => {
   const { eventId } = req.params;
   try {
@@ -99,7 +96,4 @@ export const getRefereesByEvent = async (req, res) => {
     res.status(500).json({ error: 'Failed to fetch referees for event' });
   }
 };
-<<<<<<< HEAD
 
-=======
->>>>>>> cada83ca762c26d5306adb73e37efcfa78fc4d9b

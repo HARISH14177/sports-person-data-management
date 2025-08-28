@@ -7,11 +7,8 @@ const isCategoryEligible = ({ age, weight, gender, category }) => {
   const female = gender.toLowerCase() === 'female';
 
   switch (category.toLowerCase()) {
-<<<<<<< HEAD
     case 'sub junior':
-=======
     case 'sun junior':
->>>>>>> cada83ca762c26d5306adb73e37efcfa78fc4d9b
       return age >= 14 && age <= 18 && (
         (male && weight <= 53) || (female && weight <= 43)
       );
@@ -63,10 +60,7 @@ const isCategoryEligible = ({ age, weight, gender, category }) => {
   }
 };
 
-<<<<<<< HEAD
 
-=======
->>>>>>> cada83ca762c26d5306adb73e37efcfa78fc4d9b
 export const createAthlete = async (req, res) => {
   try {
     const {
@@ -83,7 +77,6 @@ export const createAthlete = async (req, res) => {
       return res.status(400).json({ error: "Athlete does not meet category eligibility requirements" });
     }
 
-<<<<<<< HEAD
      const photoUrl = req.files['photo'] ? req.files['photo'][0].filename : null;
 const aadharUrl = req.files['aadhar'] ? req.files['aadhar'][0].filename : null;
 
@@ -106,7 +99,6 @@ const aadharUrl = req.files['aadhar'] ? req.files['aadhar'][0].filename : null;
   }
 });
 
-=======
     const photoUrl = req.files['photo'][0].filename;
     const aadharUrl = req.files['aadhar'][0].filename;
 
@@ -127,7 +119,6 @@ const aadharUrl = req.files['aadhar'] ? req.files['aadhar'][0].filename : null;
         gymId: parseInt(gymId)
       }
     });
->>>>>>> cada83ca762c26d5306adb73e37efcfa78fc4d9b
 
     res.json(athlete);
   } catch (error) {

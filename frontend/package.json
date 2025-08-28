@@ -2,11 +2,8 @@
   "name": "sports-frontend",
   "version": "1.0.0",
   "private": true,
-<<<<<<< HEAD
   "homepage": "https://harish14177.github.io/sports-person-data-management",
-=======
   "homepage": "./",
->>>>>>> cada83ca762c26d5306adb73e37efcfa78fc4d9b
   "dependencies": {
     "axios": "^1.6.8",
     "react": "^18.2.0",
@@ -17,11 +14,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-<<<<<<< HEAD
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-=======
->>>>>>> cada83ca762c26d5306adb73e37efcfa78fc4d9b
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -36,14 +30,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-<<<<<<< HEAD
   },
   "devDependencies": {
     "gh-pages": "^6.0.0"
   }
 }
 
-=======
   }
 }
->>>>>>> cada83ca762c26d5306adb73e37efcfa78fc4d9b

@@ -61,7 +61,6 @@ const EventManagement = () => {
     setEventData((prev) => ({ ...prev, [name]: value }));
   };
 
-<<<<<<< HEAD
 const handleSubmit = async () => {
   const { name, location, date, time, organiserGymId, refereeName } = eventData;
   if (!name || !location || !date || !time || !organiserGymId || !refereeName) {
@@ -177,7 +176,6 @@ const handleSubmit = async () => {
       alert('Failed to submit event');
     }
   };
->>>>>>> cada83ca762c26d5306adb73e37efcfa78fc4d9b
 
   const handleEdit = (event) => {
     setIsEditing(true);
