@@ -1,0 +1,191 @@
+/* Container */
+.athlete-container {
+  max-width: 1100px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 6px 24px rgba(33, 150, 243, 0.12);
+  padding: 40px 48px;
+  font-family: 'Roboto', 'Segoe UI', Arial, sans-serif;
+}
+
+/* Heading */
+.athlete-container h2 {
+  text-align: center;
+  font-size: 2.4rem;
+  color: #1976d2;
+  margin-bottom: 36px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Form */
+.athlete-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px 36px;
+  margin-bottom: 48px;
+}
+
+.athlete-form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 0;
+  letter-spacing: 0.5px;
+}
+
+.athlete-form input[type="text"],
+.athlete-form input[type="number"],
+.athlete-form input[type="date"],
+.athlete-form select {
+  margin-top: 10px;
+  padding: 12px 14px;
+  border: 1.5px solid #bdbdbd;
+  border-radius: 8px;
+  background: #f5f5f5;
+  font-size: 1.05rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 1px 4px rgba(33,150,243,0.04);
+}
+
+.athlete-form input:focus,
+.athlete-form select:focus {
+  border-color: #1976d2;
+  box-shadow: 0 0 0 2px #1976d233;
+  outline: none;
+}
+
+.athlete-form input[readonly] {
+  background: #e0e0e0;
+  color: #757575;
+  font-style: italic;
+}
+
+/* File Inputs */
+.athlete-form input[type="file"] {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+/* Submit Button */
+.athlete-form button[type="submit"] {
+  grid-column: span 2;
+  margin-top: 20px;
+  padding: 14px 0;
+  background: linear-gradient(90deg, #1976d2 0%, #64b5f6 100%);
+  color: #fff;
+  font-size: 1.15rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px #1976d222;
+  transition: background 0.2s, transform 0.2s;
+  letter-spacing: 1px;
+}
+
+.athlete-form button[type="submit"]:hover {
+  background: linear-gradient(90deg, #1565c0 0%, #1976d2 100%);
+  transform: translateY(-2px) scale(1.03);
+}
+
+/* Table */
+.athlete-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 28px;
+  background: #fafafa;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(33,150,243,0.08);
+}
+
+.athlete-table th, .athlete-table td {
+  padding: 14px 10px;
+  text-align: center;
+  font-size: 1.05rem;
+  border-bottom: 1px solid #e3e8f0;
+}
+
+.athlete-table th {
+  background: #1976d2;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border-bottom: 2px solid #1565c0;
+}
+
+.athlete-table tbody tr {
+  transition: background 0.2s;
+}
+
+.athlete-table tbody tr:hover {
+  background: #e3f2fd;
+}
+
+.athlete-table td img {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(33,150,243,0.08);
+  background: #fff;
+  padding: 3px;
+  transition: transform 0.2s;
+}
+
+.athlete-table td img:hover {
+  transform: scale(1.15);
+  box-shadow: 0 4px 16px #1976d233;
+}
+
+/* Edit/Delete Buttons */
+.athlete-table button {
+  padding: 7px 18px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  margin: 0 2px;
+  box-shadow: 0 1px 4px #1976d222;
+  background: #e3f2fd;
+  color: #1976d2;
+}
+
+.athlete-table button:hover {
+  background: #1976d2;
+  color: #fff;
+  transform: scale(1.07);
+}
+
+.athlete-table button:last-child {
+  background: #ff5252;
+  color: #fff;
+}
+
+.athlete-table button:last-child:hover {
+  background: #d32f2f;
+  transform: scale(1.07);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .athlete-container {
+    padding: 18px 8px;
+  }
+  .athlete-form {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .athlete-table th, .athlete-table td {
+    padding: 8px 4px;
+    font-size: 0.95rem;
+  }
+  .athlete-table {
+    font-size: 0.95rem;
+  }
+}

@@ -1,0 +1,94 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Discipline {
+  id           Int         @id @default(autoincrement())
+  name         String      @unique
+  scores       Score[]
+  events       Event[]     @relation("EventDisciplines")
+  athletes     Athlete[]   @relation("AthleteDisciplines")
+  createdAt    DateTime    @default(now())
+}
+
+
+model Gym {
+  id         Int      @id @default(autoincrement())
+  name       String
+  ownerName  String
+  coachName  String
+  address    String
+  pincode    String
+  phone      String
+  events     Event[]
+  referees   Referee[]
+  athletes   Athlete[]
+  createdAt  DateTime @default(now())
+}
+
+model Event {
+  id             Int        @id @default(autoincrement())
+  name           String
+  location       String
+  date           DateTime
+  time           String
+  organiserGymId Int
+  organiserGym   Gym        @relation(fields: [organiserGymId], references: [id])
+  disciplines    Discipline[] @relation("EventDisciplines")
+  referees       Referee[]
+  athletes       Athlete[]
+  scores         Score[]
+  createdAt      DateTime   @default(now())
+}
+
+model Referee {
+  id        Int      @id @default(autoincrement())
+  name      String
+  gymId     Int
+  eventId   Int
+  gym       Gym      @relation(fields: [gymId], references: [id])
+  event     Event    @relation(fields: [eventId], references: [id])
+  createdAt DateTime @default(now())
+}
+
+model Athlete {
+  id             Int        @id @default(autoincrement())
+  name           String
+  dob            DateTime
+  age            Int
+  gender         String
+  weight         Float
+  weightCategory String
+  category       String
+  aadharNumber   String
+  mobile         String
+  photoUrl          String
+  aadharUrl         String
+  eventId        Int
+  gymId          Int
+  disciplines    Discipline[] @relation("AthleteDisciplines")
+  event          Event      @relation(fields: [eventId], references: [id])
+  gym            Gym        @relation(fields: [gymId], references: [id])
+  scores         Score[]
+  createdAt      DateTime   @default(now())
+}
+
+model Score {
+  id           Int        @id @default(autoincrement())
+  athleteId    Int
+  disciplineId Int
+  eventId      Int
+  trial1       Float      @default(0)
+  trial2       Float      @default(0)
+  trial3       Float      @default(0)
+  maxLift      Float      @default(0)
+  athlete      Athlete    @relation(fields: [athleteId], references: [id])
+  discipline   Discipline @relation(fields: [disciplineId], references: [id])
+  event        Event      @relation(fields: [eventId], references: [id])
+  createdAt    DateTime   @default(now())
+}
